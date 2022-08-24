@@ -1,0 +1,14 @@
+.nbtachestyle{
+    background-color: rgb(56, 56, 56);
+    color:aliceblue;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 10px;
+}
+.number{
+    background-color:crimson;
+    color: aliceblue;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 10px;
+}

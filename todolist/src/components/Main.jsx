@@ -5,28 +5,31 @@ import { useState } from "react";
 
 
 function Main(props){
-    const{taches,setTaches}=useState([])
+    const[taches,setTaches]=useState([]);
+    const[tachesOver,setTachesOver]=useState([])
        
     const newtache=(e)=>{
         console.log(e)
-        const newTachesList = taches.concat(e)
+        let newTachesList = taches.concat(e)
         setTaches(newTachesList);
     }
 
+    const tacheDelete=(e)=>{
+        console.log(e)
+        let newTachesList=taches.splice(e)
+    }
 
     return(
         <>
         <BarreAjout newtache={newtache}/>
         <ul>
-            <li>
-            {/* {taches.map((tache)=>{<TachesList text={tache.text}/>})} */}
-            </li>
+            {taches.map((tache,id)=><TachesList key={id} text={tache.text}/>)}
         </ul>
         <div className="container">
         <div className="d-flex justify-content-end">
             <span className="d-flex align-items-end">
             <h3 className="nbtachestyle">Nb Tache(s):</h3>
-            <h3 className="number mx-2">0</h3>
+            <h3 className="number mx-2">{taches.length}</h3>
             </span>
         </div>
         </div>
